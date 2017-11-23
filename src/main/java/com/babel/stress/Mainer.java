@@ -15,11 +15,11 @@ public class Mainer {
             long times = 0;
             while (true) {
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println(String.format("请求TPS:%d", (Request.longAdder.longValue() - times) / 3));
+                System.out.println(String.format("请求TPS:%d", (Request.longAdder.longValue() - times)));
                 times = Request.longAdder.longValue();
             }
         }).start();
